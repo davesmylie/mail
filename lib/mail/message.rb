@@ -1836,7 +1836,7 @@ module Mail
     end
 
     def raw_source=(value)
-      @raw_source = value.to_crlf
+       @raw_source = value.force_encoding("binary").to_crlf
     end
 
     # see comments to body=. We take data starting from index and process it lazily
